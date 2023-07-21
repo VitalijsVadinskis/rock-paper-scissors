@@ -6,7 +6,7 @@ function getComputerChoice () {
         return 'rock'
     } else if (x == 1) {
         return 'paper'
-    }   else {
+    } else {
         return 'scissors'
     }
 }
@@ -15,26 +15,50 @@ function playRound (playerSelection, computerSelection) {
     let x = playerSelection.toLowerCase()
     let y = computerSelection.toLowerCase()
 
-    if (x == 'rock' && y == 'paper') {
+    if (x == 'rock' && y == 'paper') 
         return 'You Lose! Paper beats Rock!'
-    } else if (x == 'paper' && y == 'rock') {
+     else if (x == 'paper' && y == 'rock') 
         return 'You Win! Paper beats Rock!'
-    } else if (x == 'rock' && y == 'scissors') {
+     else if (x == 'rock' && y == 'scissors') 
         return 'You Win! Rock beats Scissors!'
-    } else if (x == 'scissors' && y =='rock') {
+     else if (x == 'scissors' && y =='rock') 
         return 'You Lose! Rock beats Scissors!'
-    } else if (x == 'paper' && y =='scissors') {
+     else if (x == 'paper' && y =='scissors') 
         return 'You Lose! Scissors beats Paper!'
-    } else if (x == 'scissors' && y =='paper') {
+     else if (x == 'scissors' && y =='paper') 
         return 'You Win! Scissors beats Paper!'
-    } else  
+     else  
         return 'It\'s a Tie!'
 }
 
 
+function game () {
+
+    const computerSelection = getComputerChoice()
+    let x = (playRound(playerSelection, computerSelection)).slice(0, 5)
+    console.log(x)
+
+     if (x == 'You W') 
+        return youWon++
+     else if (x == 'You L') 
+        return pcWon++
+    
 
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection))
+}
+
+
+
+const playerSelection = "Rock";
+let youWon = 0
+let pcWon = 0
+game()
+game()
+game()
+game()
+game()
+
+
+console.log('You won: ' +youWon+ ' times')
+console.log('Pc won: ' +pcWon+ ' times')
 
