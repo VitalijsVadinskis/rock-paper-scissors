@@ -38,15 +38,18 @@ function game () {
     let x = (playRound(playerSelection, computerSelection)).slice(0, 5)
     console.log(x)
 
-     if (x == 'You W') 
+    if (x == 'You W') 
         return youWon++
-     else if (x == 'You L') 
+    else if (x == 'You L') 
         return pcWon++
-    
-
-
 }
 
+function decider (youWon, pcWon) {
+    if (youWon > pcWon) {
+        console.log('YOU ARE THE CHEMPIOEN, MY FRIUEND')
+    } else 
+        console.log ('You da loser my firend HHSAAHH')
+}
 
 
 const playerSelection = "Rock";
@@ -57,8 +60,9 @@ game()
 game()
 game()
 game()
-
-
 console.log('You won: ' +youWon+ ' times')
 console.log('Pc won: ' +pcWon+ ' times')
+decider(youWon, pcWon)
+
+
 
