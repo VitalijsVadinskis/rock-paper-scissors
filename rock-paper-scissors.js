@@ -1,3 +1,10 @@
+const buttons = document.querySelectorAll('input')
+
+
+
+
+
+
 
 function getComputerChoice () {
     let x = Math.floor(Math.random() * 3);
@@ -9,7 +16,7 @@ function getComputerChoice () {
     } else {
         return 'scissors'
     }
-}
+};
 
 function playRound (playerSelection, computerSelection) {
     let x = playerSelection.toLowerCase()
@@ -29,12 +36,13 @@ function playRound (playerSelection, computerSelection) {
         return 'You Win! Scissors beats Paper!'
      else  
         return 'It\'s a Tie!'
-}
+};
 
 
 function game () {
 
     const computerSelection = getComputerChoice()
+    //Sliced the string because first part tells me if i win or lose.
     let x = (playRound(playerSelection, computerSelection)).slice(0, 5)
     console.log(x)
 
@@ -42,27 +50,30 @@ function game () {
         return youWon++
     else if (x == 'You L') 
         return pcWon++
-}
+};
 
 function decider (youWon, pcWon) {
-    if (youWon > pcWon) {
+game()
+game()
+game()
+game()
+game()
+    if (youWon > pcWon) 
         console.log('YOU ARE THE CHEMPIOEN, MY FRIUEND')
-    } else 
+    else 
         console.log ('You da loser my firend HHSAAHH')
-}
+};
 
 
-const playerSelection = "Rock";
-let youWon = 0
-let pcWon = 0
-game()
-game()
-game()
-game()
-game()
-console.log('You won: ' +youWon+ ' times')
-console.log('Pc won: ' +pcWon+ ' times')
-decider(youWon, pcWon)
+let playerSelection = prompt("Rock, Paper, Scissors");
+let youWon = 0;
+let pcWon = 0;
+
+console.log('You won: ' +youWon+ ' times');
+console.log('Pc won: ' +pcWon+ ' times');
+decider(youWon, pcWon);
+
+
 
 
 
