@@ -1,3 +1,8 @@
+let won = 0;
+let lost = 0;
+
+
+
 function getComputerChoice() {
     let x = Math.floor(Math.random() * 3);
     
@@ -18,20 +23,34 @@ function playRound () {
     let result = ''
 
     if ((playerSelection == 'rock' && computerSelection == 'scissors') ||
-    (playerSelection == 'paper' && computerSelection == 'rock') ||
-    (playerSelection == 'scissors' && computerSelection == 'paper')) {
+        (playerSelection == 'paper' && computerSelection == 'rock') ||
+        (playerSelection == 'scissors' && computerSelection == 'paper')) {
 
-        result = ('You Won! ' +playerSelection +' beats ' + computerSelection)
+        result = ('You Won! ' +playerSelection +' beats ' + computerSelection);
+        won++
     
     }else if (playerSelection == computerSelection){
         result = ('It\'s a tie! You both chose ' +playerSelection)
     }else {
         result = ('You Lost! ' +computerSelection +' beats ' + playerSelection)
+        lost++
     }
     return result
 };
 
-console.log(playRound())
+for(i = 0; won < 5 && lost <5; i++){
+    playRound()
+}
+console.log('You won: ' +won+ ' times')
+console.log('You lost: ' +lost+ ' times')
+
+if(won == 5){
+    console.log('grand champion')
+}else{
+    console.log('loser')
+}
+
+
 
 
 
