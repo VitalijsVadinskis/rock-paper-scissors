@@ -6,7 +6,11 @@ buttons.forEach(button =>{
     })
 })
 
-
+function disableButton(){
+    buttons.forEach(button => {
+        button.disabled = true;
+    })
+}
 
 
 
@@ -41,6 +45,7 @@ function playRound (playerSelection) {
 
         if(won == 5) {
             result += '<br><br>I won the game! Reload the page to play again' 
+            disableButton()
         }
     
     }else if (playerSelection == computerSelection){
@@ -54,6 +59,7 @@ function playRound (playerSelection) {
     
         if(lost == 5) {
             result += '<br><br>I lost the game! Reload the page to play again' 
+            disableButton()
         }
     
     }
