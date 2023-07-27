@@ -6,6 +6,10 @@ buttons.forEach(button =>{
     })
 })
 
+
+
+
+
 let won = 0;
 let lost = 0;
 
@@ -30,27 +34,30 @@ function playRound (playerSelection) {
         (playerSelection == 'paper' && computerSelection == 'rock') ||
         (playerSelection == 'scissors' && computerSelection == 'paper')) {
 
-        result = ('You Won! ' +playerSelection +' beats ' + computerSelection);
         won++
+        result = ('You Won! ' +playerSelection +' beats ' + computerSelection
+        + "<br><br>Player score: " + won + "<br>Computer score: " + lost);
+        
+
+        if(won == 5) {
+            result += '<br><br>I won the game! Reload the page to play again' 
+        }
     
     }else if (playerSelection == computerSelection){
-        result = ('It\'s a tie! You both chose ' +playerSelection)
+        result = ('It\'s a tie! You both chose ' +playerSelection
+        + "<br><br>Player score: " + won + "<br>Computer score: " + lost)
+        
     }else {
-        result = ('You Lost! ' +computerSelection +' beats ' + playerSelection)
         lost++
+        result = ('You Lost! ' +computerSelection +' beats ' + playerSelection
+        + "<br><br>Player score: " + won + "<br>Computer score: " + lost)
+    
+        if(lost == 5) {
+            result += '<br><br>I lost the game! Reload the page to play again' 
+        }
+    
     }
-    return result
+
+    document.getElementById('result').innerHTML =result
+    return
 };
-
-//for(i = 0; won < 5 && lost <5; i++){
-//}
-console.log('You won: ' +won+ ' times')
-console.log('You lost: ' +lost+ ' times')
-
-if(won == 5){
-    console.log('grand champion')
-}else{
-    console.log('loser')
-}
-
-
