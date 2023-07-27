@@ -1,7 +1,13 @@
+const buttons = document.querySelectorAll('input')
+
+buttons.forEach(button =>{
+    button.addEventListener('click', function(){
+       console.log(playRound(button.value))
+    })
+})
+
 let won = 0;
 let lost = 0;
-
-
 
 function getComputerChoice() {
     let x = Math.floor(Math.random() * 3);
@@ -16,11 +22,9 @@ function getComputerChoice() {
 };
 
 
-function playRound () {
-
-    let playerSelection = 'rock'
-    let computerSelection = getComputerChoice()
+function playRound (playerSelection) {
     let result = ''
+    let computerSelection = getComputerChoice()
 
     if ((playerSelection == 'rock' && computerSelection == 'scissors') ||
         (playerSelection == 'paper' && computerSelection == 'rock') ||
@@ -38,9 +42,8 @@ function playRound () {
     return result
 };
 
-for(i = 0; won < 5 && lost <5; i++){
-    playRound()
-}
+//for(i = 0; won < 5 && lost <5; i++){
+//}
 console.log('You won: ' +won+ ' times')
 console.log('You lost: ' +lost+ ' times')
 
@@ -49,9 +52,5 @@ if(won == 5){
 }else{
     console.log('loser')
 }
-
-
-
-
 
 
